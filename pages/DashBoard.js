@@ -10,9 +10,16 @@ class DashBoard {
 
         this.adminPanelVisible = page.locator('.oxd-main-menu-item-wrapper:visible');
 
+        this.dashBoardVisible = page.locator('.oxd-topbar-header-breadcrumb');
 
         this.adminPanelSearchBar = page.locator("//input[@placeholder='Search']");
         
+    }
+
+    async isDashBoardVisible(){
+        
+        return await this.dashBoardVisible.isVisible();
+
     }
 
     async checkDashBoardAdminPanelCount() {
