@@ -1,19 +1,20 @@
-const{expect , test} = require('@playwright/test');
+const base = require('@playwright/test');
 
-exports.test = base.test.extends[{
+exports.test = base.test.extend({
 
-        screenShotOnlyOnFailure : [async({page},use,testInfo)=>{
+    screenshotOnFailure: [async ({ page }, use, testInfo) => {
+        
+        await use();
 
-                await use();
-                
-                if(testInfo.status!==testInfo.expected){
-                    
-                     await page.screenshot({path: `../test-result/ScreenShot/${testInfo.titile}.png`,fullPage:true});
-                    
-                     
+        if (testInfo.status !== testInfo.expectedStatus) {
 
+            await page.screenshot({
+                path: `screenshots/${testInfo.title}.png`,
+                fullPage: true
+            });
+        }
+    }, { auto: true }]
 
-                }
- } ]
+});
 
-}]
+exports.expect = base.expect;

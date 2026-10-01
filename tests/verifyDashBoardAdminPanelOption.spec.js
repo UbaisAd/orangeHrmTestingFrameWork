@@ -1,8 +1,7 @@
 const DashBoard = require('../pages/DashBoard');
 const LoginPage = require('../pages/LoginPage.js');
 
-const {test,expect} = require('@playwright/test');
-
+const {test,expect} = require('../fixtures/test');
 
 test('Admin Panel Options', async({page})=>{
 
@@ -11,7 +10,6 @@ test('Admin Panel Options', async({page})=>{
 
                 await page.goto(loginPage.Url());
                 await loginPage.login('Admin','admin123');
-
                             
                 await expect(await dashBoard.checkDashBoardAdminPanelOptions()).toBeTruthy();
                 

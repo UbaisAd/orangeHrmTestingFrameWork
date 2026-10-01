@@ -1,14 +1,11 @@
-const { test, expect } = require('@playwright/test');
+const { test, expect } = require('../fixtures/test');
 const loginData = require('../test-data/loginData');
-
-
 
 const LoginPage = require('../pages/LoginPage');
 
 test('Login', async ({ page }) => {
 
     const loginPage = new LoginPage(page);
-    
 
     for(let credential of loginData){
         

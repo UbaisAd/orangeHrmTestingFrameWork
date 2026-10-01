@@ -1,6 +1,6 @@
 const loginData = [
     {
-        username: "dmin",
+        username: "admin",
         password: "admin123",
         expected: "success"
     },
