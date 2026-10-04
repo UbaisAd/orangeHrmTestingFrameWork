@@ -8,7 +8,6 @@ test('Admin Search Funtionality', async({page})=>{
 
             const dashBoard = new DashBoard(page);
 
-            await page.goto(loginPage.Url());
 
            await loginPage.login('Admin','admin123');       
 

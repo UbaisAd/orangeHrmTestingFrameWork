@@ -34,11 +34,7 @@ class LoginPage {
 }
 
 
-    Url(){
-
-        return "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
-
-    }
+   
 
     async login(username, password) {
         await this.username.fill(username);

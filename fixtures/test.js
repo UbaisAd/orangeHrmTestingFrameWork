@@ -1,9 +1,17 @@
 const base = require('@playwright/test');
 
+ base.test.beforeEach(async ({ page }, use) => {
+
+        await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
+    }),
+
+
 exports.test = base.test.extend({
 
+
     screenshotOnFailure: [async ({ page }, use, testInfo) => {
-        
+
+        console.log("test running....")
         await use();
 
         if (testInfo.status !== testInfo.expectedStatus) {
@@ -13,6 +21,7 @@ exports.test = base.test.extend({
                 fullPage: true
             });
         }
+
     }, { auto: true }]
 
 });

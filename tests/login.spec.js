@@ -9,7 +9,7 @@ test('Login', async ({ page }) => {
 
     for(let credential of loginData){
         
-        await page.goto(loginPage.Url());
+        
 
     await loginPage.login(credential.username, credential.password);
 
