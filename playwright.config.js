@@ -9,6 +9,7 @@ module.exports  = defineConfig({
 
             browserName : 'chromium',
             headless : false,
+            storageState : 'auth/auth.json',
    
         }
 });
